@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ASPEN Personnel & OC Registry Terminal — OC Database for Allied Security, Protection & Emergency Network">
+<title>OC Database // ASPEN Operations Hub</title>
+
+<!-- Fonts & CSS -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/servebot-greeting.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+    <div class="header-frame">
+        <div class="header-inner">
+            <img src="assets/logos/aspen-logo.png" alt="ASPEN – Allied Security, Protection & Emergency Network" class="bnl-logo small-centered">
+            <div>
+                <h1>ASPEN OPERATIONS HUB // OC DATABASE</h1>
+                <p class="subtext">ASPEN Personnel & OC Registry Terminal</p>
+                <p class="status">STATUS: ONLINE — AUTHORIZED USER: <strong>L.A.Y.L.A // ASPEN-SYSTEM-BOT</strong></p>
+                <div class="status-widgets">
+                    NETWORK TIME: <strong id="shipTime"></strong> |
+                    SECTOR: <strong>ASPEN-7 / ALPHA</strong> |
+                    UPLINK: <strong>STABLE</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== Nav ===== -->
+<nav class="nav-bar nav-right">
+    <a href="index.html" class="nav-btn active">HOME</a>
+    
+    <div class="nav-dropdown">
+        <div class="nav-btn nav-dropdown-toggle">ARCHIVES</div>
+        <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-header">ASPEN Archives</div>
+            <a href="pages/ocs.html" class="nav-dropdown-item">OC Database</a>
+            <a href="#" class="nav-dropdown-item disabled coming-soon">Character Rankings [MAINTENANCE]</a>
+            <a href="pages/upcoming-commissions-v2.html" class="nav-dropdown-item">Commission Queue</a>
+        </div>
+    </div>
+    
+    <div class="nav-dropdown">
+        <div class="nav-btn nav-dropdown-toggle">PROFILE</div>
+        <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-header">👤 User Profile</div>
+            <a href="pages/bio.html" class="nav-dropdown-item">Biography</a>
+            <a href="pages/socials.html" class="nav-dropdown-item">Social Links</a>
+        </div>
+    </div>
+    
+    <div class="nav-dropdown">
+        <div class="nav-btn nav-dropdown-toggle">COMMUNITY</div>
+        <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-header">Community Hub</div>
+            <a href="#" class="nav-dropdown-item disabled coming-soon">Art Gallery</a>
+            <a href="#" class="nav-dropdown-item disabled coming-soon">User Submissions</a>
+            <a href="#" class="nav-dropdown-item disabled coming-soon">Featured Works</a>
+        </div>
+    </div>
+    
+    <div class="nav-dropdown">
+        <div class="nav-btn nav-dropdown-toggle secret-btn">ADMIN</div>
+        <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-header">🔧 Admin Panel</div>
+            <a href="pages/admin-v2.html" class="nav-dropdown-item">ASPEN Command Console</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== Intro ===== -->
+<section class="terminal-intro">
+    <p>Welcome to the <strong>ASPEN Operations Hub</strong>.  
+    Access personnel character records, crew social networks, personnel files, and network systems through the navigation above.  
+    All operations managed by <abbr title="Logistics & Analytics Yield Learning Algorithm">L.A.Y.L.A</abbr> security protocols.</p>
+</section>
+
+<!-- ===== Quick Access ===== -->
+<main class="character-sections">
+    <section class="character-section">
+        <h2 class="section-title">Quick Access Menu</h2>
+        <div class="character-grid centered">
+            <a href="pages/ocs.html" class="character-card">
+                <h2>OC Database</h2>
+                <p>Browse All Character Records</p>
+            </a>
+            <div class="character-card disabled" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">
+                <h2>Character Rankings</h2>
+                <p>[SYSTEM MAINTENANCE]</p>
+            </div>
+            <a href="pages/socials.html" class="character-card">
+                <h2>Social Networks</h2>
+                <p>Team Communication Links</p>
+            </a>
+            <a href="pages/bio.html" class="character-card">
+                <h2>Personnel File</h2>
+                <p>Creator Information</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== ASPEN Information Terminal ===== -->
+    <section class="character-section">
+        <h2 class="section-title">ASPEN Information Terminal</h2>
+        <div class="home-terminal-container">
+            <div class="home-terminal-header">
+                <div class="terminal-title">
+                    <span class="terminal-logo">████</span>
+                    ASPEN CLASSIFIED INFORMATION ACCESS
+                    <span class="terminal-status">LEVEL 7 READY</span>
+                </div>
+                <div class="terminal-controls">
+                    <span class="control-btn minimize">–</span>
+                    <span class="control-btn maximize">□</span>
+                    <span class="control-btn close" onclick="clearHomeTerminal()">×</span>
+                </div>
+            </div>
+
+            <div class="home-terminal-output" id="homeTerminalOutput">
+                <div class="boot-sequence">
+                    <div class="boot-line">ASPEN OPERATIONS NETWORK v3.2</div>
+                    <div class="boot-line">Initializing secure connection...</div>
+                    <div class="boot-line success">Connection established.</div>
+                    <div class="boot-line">Ready for input.</div>
+                    <div class="boot-line help">Type 'help' for available commands or click <a href="pages/information.html" class="terminal-link">here</a> for full terminal.</div>
+                </div>
+            </div>
+
+            <div class="home-terminal-input-line">
+                <span class="terminal-prompt">ASPEN-OPS:~$ </span>
+                <input type="text" id="homeTerminalInput" class="terminal-input" autocomplete="off" placeholder="Type 'help' or 'status'...">
+                <span class="cursor">█</span>
+            </div>
+
+            <div class="home-terminal-suggestions" id="homeSuggestions"></div>
+        </div>
+    </section>
+</main>
+
+<!-- ===== Global Status Dashboard ===== -->
+<section class="ship-status">
+    <h3>&#127758; ASPEN Global Status Dashboard</h3>
+    <div class="status-grid">
+        <div class="status-panel">
+            <h4>Field Operations Readiness</h4>
+            <div class="status-bar">
+                <div class="status-fill" style="width: 98%"></div>
+            </div>
+            <span class="status-value">98% Operational</span>
+        </div>
+        <div class="status-panel">
+            <h4>Medical Capacity</h4>
+            <div class="status-bar">
+                <div class="status-fill warning" style="width: 76%"></div>
+            </div>
+            <span class="status-value">76% Available</span>
+        </div>
+        <div class="status-panel">
+            <h4>Rescue Teams Deployed</h4>
+            <div class="status-bar">
+                <div class="status-fill" style="width: 94%"></div>
+            </div>
+            <span class="status-value">94% Active</span>
+        </div>
+        <div class="status-panel">
+            <h4>Network Communications</h4>
+            <div class="status-bar">
+                <div class="status-fill" style="width: 100%"></div>
+            </div>
+            <span class="status-value">100% Online</span>
+        </div>
+        <div class="status-panel">
+            <h4>Security Incident Level</h4>
+            <div class="status-bar">
+                <div class="status-fill special" style="width: 15%"></div>
+            </div>
+            <span class="status-value">Level 1 - Minimal</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Two-Column Layout Section ===== -->
+<div class="two-column-layout">
+    <!-- ===== Active Personnel ===== -->
+    <section class="active-passengers half-width">
+        <h3>Recently Active Personnel</h3>
+        <div class="passenger-list">
+            <div class="passenger-entry">
+                <span class="passenger-icon">A</span>
+                <div class="passenger-info">
+                    <strong>A.R.I.E.L.L.A</strong>
+                    <small>Security Patrol - Sector 12</small>
+                </div>
+                <span class="status-indicator online"></span>
+            </div>
+            <div class="passenger-entry">
+                <span class="passenger-icon">D</span>
+                <div class="passenger-info">
+                    <strong>Darla</strong>
+                    <small>Medical Bay - Environmental Duty</small>
+                </div>
+                <span class="status-indicator online"></span>
+            </div>
+            <div class="passenger-entry">
+                <span class="passenger-icon">A</span>
+                <div class="passenger-info">
+                    <strong>Ariella Non-Mech Form</strong>
+                    <small>Break Room - Cocoa Break</small>
+                </div>
+                <span class="status-indicator idle"></span>
+            </div>
+            <div class="passenger-entry">
+                <span class="passenger-icon">C</span>
+                <div class="passenger-info">
+                    <strong>Caelielle</strong>
+                    <small>Observation Deck - Meditation</small>
+                </div>
+                <span class="status-indicator away"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Current Priority Theatre ===== -->
+    <section class="weather-report half-width">
+        <h3>Current Priority Theatre</h3>
+        <div class="weather-grid-compact">
+            <div class="weather-card">
+                <h4>Global Conditions</h4>
+                <div class="weather-status safe">STABLE</div>
+                <div class="weather-details">
+                    <span>Threat Level: Low</span>
+                    <span>Status: All Clear</span>
+                </div>
+            </div>
+            <div class="weather-card">
+                <h4>Active Operations</h4>
+                <div class="weather-status warning">IN PROGRESS</div>
+                <div class="weather-details">
+                    <span>Deployments: 3 Active</span>
+                    <span>Response Time: Optimal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ===== Three-Column Layout Section ===== -->
+<div class="three-column-layout">
+    <!-- ===== System Logs ===== -->
+    <section class="system-logs third-width">
+        <h3>System Log</h3>
+        <ul>
+            <li>[00:14:02] Synchronizing personnel biometric database... [COMPLETE]</li>
+            <li>[00:14:03] Query: "Darling Deer" → No matching official personnel found. (Unofficial ID flagged)</li>
+            <li>[00:14:06] Updating gallery indexes... Complete.</li>
+            <li>[00:14:07] Encrypted message received from unknown source... Decryption failed. [LOCKED]</li>
+            <li>[00:14:08] Art collaboration protocols initialized... Try terminal command for details. [ART]</li>
+            <li>[00:14:10] Maintenance routine #042 engaged. All systems nominal.</li>
+        </ul>
+    </section>
+
+    <!-- ===== News Feed ===== -->
+    <section class="news-feed third-width">
+        <h3>ASPEN Network News</h3>
+        <div class="news-items">
+            <div class="news-item">
+                <span class="news-date">[2025.341.14:23]</span>
+                <strong>SYSTEM UPDATE:</strong> A.R.I.E.L.L.A firmware updated to v2.8.1 - Enhanced social interaction protocols
+            </div>
+            <div class="news-item">
+                <span class="news-date">[2025.340.09:45]</span>
+                <strong>OPERATIONS:</strong> New art galleries added to personnel terminals - Browse character records for updates
+            </div>
+            <div class="news-item">
+                <span class="news-date">[2025.339.16:12]</span>
+                <strong>MAINTENANCE:</strong> Medical Bay expansion completed - Darla reports 15% efficiency increase
+            </div>
+            <div class="news-item classified">
+                <span class="news-date">[2025.338.22:01]</span>
+                <strong>CLASSIFIED:</strong> [DATA REDACTED] - Access Level 7 required for details
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Easter Eggs ===== -->
+    <section class="easter-eggs third-width">
+        <h3>Fun Facts / Easter Eggs</h3>
+        <ul>
+            <li title="ASPEN Personnel Directive 12: Stay alert. Stay safe.">Ariella Non-Mech Form has ordered <strong>492 cups of cocoa</strong> since joining.</li>
+            <li title="ASPEN Medical Policy #3">Darla once tried to plant an entire forest in the medical bay.</li>
+            <li title="A.R.I.E.L.L.A Humor Subroutine v2.3">Caelielle's favorite song is allegedly "Fly Me to the Moon" but records are classified.</li>
+            <li title="System error: Missing file 'MISC_FUNNYFACTS.DAT'">Misc file data constantly changes… no one knows why.</li>
+            <li title="Hidden creative protocols detected">Terminal diagnostics show unusual "artcode" signatures in recent logs...</li>
+            <li title="Unauthorized unit detection system active">Security reports mention rogue activity in lower sectors...</li>
+            <li title="Field scanner protocols enabled">Reconnaissance units respond to classified access codes...</li>
+            <li title="Command override attempts logged">Central command access shows failed authorization attempts...</li>
+            <li title="Environmental status classified">Global environmental data available via secure command protocols...</li>
+            <li title="Specimen containment active">Biological security mentions containment procedures...</li>
+            <li title="Project classification maximum">Mysterious classified project files heavily redacted...</li>
+        </ul>
+    </section>
+</div>
+
+<!-- ===== Security Camera Feed ===== -->
+<section class="security-feed">
+    <h2 class="section-title">Live Operations Feed — Sector 07</h2>
+    <div class="camera-frame">
+        <video autoplay muted loop playsinline class="camera-video">
+            <source src="assets/video/deck07_feed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="camera-overlay">
+            <span class="cam-status">LIVE — SECURE LINK</span>
+            <span class="cam-location">ASPEN OPERATIONS // MONITORING BAY</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Fun Facts ===== -->
+<div class="status-ticker">
+    <marquee behavior="scroll" direction="left">
+        Ariella Non-Mech Form has ordered 492 cups of cocoa since joining. — Darla once tried to plant a forest in the medical bay. — Caelielle's favorite song is "Fly Me to the Moon" (classified). — Misc file data constantly changes… no one knows why.
+    </marquee>
+</div>
+
+<!-- ===== Footer ===== -->
+<section class="system-footer">
+    <p>© 2025 Ariella Fawnbrook // ASPEN Operations Hub OC Terminal</p>
+    <p>ASPEN NETWORK INTERFACE — VERSION <a href="pages/information.html" class="hidden-link" title="Operations Access">3.2</a></p>
+</section>
+
+<!-- ===== Live Ship Time Script ===== -->
+<script src="js/version-check.js"></script>
+<script src="js/nav-dropdowns.js"></script>
+<script src="js/custom-dialogs.js"></script>
+<script src="js/shiptime.js"></script>
+<script src="js/home-terminal.js"></script>
+<script src="js/earth-day-special.js"></script>
+<script src="js/pride-month-special.js"></script>
+<script src="js/trans-awareness-special.js"></script>
+<!-- <script src="js/holiday-season-special.js"></script> -->
+<script src="js/servebot-greeting.js"></script>
+
+</body>
+</html>

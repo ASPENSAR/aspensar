@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPEN CLASSIFIED // INFORMATION TERMINAL</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="info-terminal">
+
+<div class="full-terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-title">
+            <span class="terminal-logo">████</span>
+            ASPEN CLASSIFIED INFORMATION TERMINAL
+            <span class="terminal-status">LEVEL 7 ACCESS</span>
+        </div>
+        <div class="terminal-controls">
+            <span class="control-btn minimize">–</span>
+            <span class="control-btn maximize">□</span>
+            <span class="control-btn close" onclick="window.location.href='../index.html'">×</span>
+        </div>
+    </div>
+
+    <div class="terminal-output" id="terminalOutput">
+        <div class="boot-sequence">
+            <div class="boot-line">ASPEN NETWORK v3.2.EXEC</div>
+            <div class="boot-line">Initializing secure connection...</div>
+            <div class="boot-line success">Connection established.</div>
+            <div class="boot-line">Authenticating user credentials...</div>
+            <div class="boot-line success">Access granted - LEVEL 7 (EXECUTIVE)</div>
+            <div class="boot-line warning">WARNING: This terminal contains classified information.</div>
+            <div class="boot-line">Ready for input.</div>
+            <div class="boot-line help">Type 'help' for available commands.</div>
+        </div>
+    </div>
+
+    <div class="terminal-input-line">
+        <span class="terminal-prompt">ASPEN-EXEC:~$ </span>
+        <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" autofocus>
+        <span class="cursor">█</span>
+    </div>
+
+    <div class="terminal-suggestions" id="suggestions"></div>
+</div>
+
+<script src="../js/version-check.js"></script>
+<script src="../js/full-terminal.js"></script>
+<script src="../js/shiptime.js"></script>
+
+</body>
+</html>
