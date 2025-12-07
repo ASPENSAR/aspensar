@@ -1,6 +1,6 @@
 /**
- * SERV-E Bot Welcome Greeting
- * Cute welcome popup for the USS Axiom homepage
+ * ASPEN Service Bot Welcome Greeting
+ * Welcome popup for the ASPEN Operations Hub homepage
  */
 
 class ServeBot {
@@ -21,7 +21,7 @@ class ServeBot {
             }, 1500);
         }
 
-        console.log('🤖 SERV-E Bot initialized');
+        console.log('🤖 ASPEN Service Bot initialized');
     }
 
     showWelcomeGreeting() {
@@ -52,11 +52,11 @@ class ServeBot {
         popup.id = 'servebot-welcome';
 
         const greetings = [
-            "Welcome aboard the USS Axiom!",
-            "Greetings, passenger!",
-            "Hello there, crew member!",
-            "Welcome to the Axiom Terminal!",
-            "Salutations, fellow space traveler!"
+            "Welcome to ASPEN Operations Hub!",
+            "Greetings, personnel!",
+            "Hello there, team member!",
+            "Welcome to the ASPEN Network Terminal!",
+            "Salutations, fellow operative!"
         ];
 
         const tips = [
@@ -85,8 +85,8 @@ class ServeBot {
                         </div>
                     </div>
                     <div class="servebot-info">
-                        <h3>SERV-E Unit #427</h3>
-                        <p class="servebot-subtitle">Ship Service Assistant</p>
+                        <h3>ASPEN Service Unit #427</h3>
+                        <p class="servebot-subtitle">Operations Assistant</p>
                     </div>
                     <button class="servebot-close" onclick="serveBot.dismissPopup(document.getElementById('servebot-welcome'))">✕</button>
                 </div>

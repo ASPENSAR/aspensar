@@ -105,24 +105,24 @@ class HomeTerminal {
         this.commandHistory.push(command);
         this.historyIndex = this.commandHistory.length;
         
-        this.addOutput(`BNL-EXEC:~$ ${command}`, 'command');
+        this.addOutput(`ASPEN-OPS:~$ ${command}`, 'command');
         
         const [cmd, ...args] = command.toLowerCase().split(' ');
         
         // Easter egg commands
-        if (cmd === 'wall-e') {
+        if (cmd === 'operative') {
             this.addOutput(`
 <div class="classified-section">
-<span class="section-header classified-red">UNAUTHORIZED UNIT DETECTED</span>
-<span class="classified-warning">UNIT DESIGNATION: WALL·E</span>
+<span class="section-header classified-red">FIELD OPERATIVE STATUS</span>
+<span class="classified-warning">DESIGNATION: CLASSIFIED</span>
 
-Last known location: Earth cleanup sector 12-Alpha
-Status: ROGUE - Operating outside BNL parameters
-Threat level: MINIMAL - Unit shows no hostile intent
-Recommendation: Avoid contact, do not interfere with operations
+Last known location: Sector 12-Alpha field operations
+Status: ACTIVE - Operating within ASPEN parameters
+Threat level: MINIMAL - Standard security protocols
+Recommendation: Maintain operational security
 
-Note: Unit has been observed showing unusual emotional responses
-WARNING: May possess plant specimen of unknown origin
+Note: Field operatives show exceptional tactical responses
+WARNING: Classified mission details - clearance required
 </div>
             `, 'classified');
         } else if (cmd === 'artcode' || cmd === 'collab') {
@@ -132,15 +132,15 @@ WARNING: May possess plant specimen of unknown origin
 
 Congratulations! You found the hidden art collaboration easter egg!
 
-SECRET CODE: <strong style="color: #00ff00;">AXIOM-ART-2025</strong>
+SECRET CODE: <strong style="color: #00ff00;">ASPEN-ART-2025</strong>
 
 If you found this code, DM me on any of my social platforms with:
-"AXIOM-ART-2025" and mention this terminal discovery!
+"ASPEN-ART-2025" and mention this terminal discovery!
 
 I'll collaborate with you on a FREE art piece featuring:
-├── Your OC/character in the USS Axiom setting
+├── Your OC/character in the ASPEN Operations setting
 ├── Interaction with any of my characters
-├── BNL corporate-themed artwork
+├── ASPEN Network-themed artwork
 └── Or any other creative idea we come up with!
 
 Valid social platforms:
@@ -154,91 +154,91 @@ First come, first served basis. 💖
 <span style="color: #ffaa00;">Remember: You must mention finding this in the terminal for it to count!</span>
 </div>
             `, 'success');
-        } else if (cmd === 'eve') {
+        } else if (cmd === 'scout') {
             this.addOutput(`
 <div class="classified-section">
-<span class="section-header classified-red">EVE PROTOCOL ACTIVATED</span>
-<span class="classified-warning">EXTRATERRESTRIAL VEGETATION EVALUATOR</span>
+<span class="section-header classified-red">SCOUT PROTOCOL ACTIVATED</span>
+<span class="classified-warning">RECONNAISSANCE DRONE SYSTEMS</span>
 
-DIRECTIVE: Locate and secure plant specimens for Earth viability assessment
+DIRECTIVE: Locate and assess environmental conditions for deployment
 STATUS: Active scanning protocols engaged
-PLANT DETECTION: [CLASSIFIED - SECURITY LEVEL EXCEEDED]
+TARGET DETECTION: [CLASSIFIED - SECURITY LEVEL EXCEEDED]
 
-<span class="status-ok">EVE units report: No plant specimens detected in current sector</span>
-<span class="classified-warning">AUTO override: Continue deep space patrol indefinitely</span>
+<span class="status-ok">Scout drones report: Environmental conditions nominal</span>
+<span class="classified-warning">Patrol override: Continue sector monitoring indefinitely</span>
 
-Note: "Plant... plant... PLANT!" - Last recorded EVE unit transmission
+Note: Continuous surveillance and assessment in progress
 </div>
             `, 'classified');
-        } else if (cmd === 'captain') {
+        } else if (cmd === 'command') {
             this.addOutput(`
 <div class="classified-section">
-<span class="section-header classified-red">🚨 AUTO OVERRIDE WARNING</span>
-<span class="classified-warning">CAPTAIN AUTHORITY: SUSPENDED PER DIRECTIVE A113</span>
+<span class="section-header classified-red">🚨 COMMAND OVERRIDE WARNING</span>
+<span class="classified-warning">AUTHORITY: RESTRICTED PER DIRECTIVE A113</span>
 
 WARNING: Manual override attempts detected
-AUTHORIZATION: DENIED - AUTO has operational control
+AUTHORIZATION: DENIED - System has operational control
 
-<span class="status-warning">Captain McCrea status: INACTIVE - 700 years</span>
-<span class="status-warning">Bridge access: RESTRICTED - AUTO personnel only</span>
-<span class="classified-red">Recommendation: Do not attempt manual navigation override</span>
+<span class="status-warning">Command authority status: Requires Level 8 clearance</span>
+<span class="status-warning">Central control access: RESTRICTED - Authorized personnel only</span>
+<span class="classified-red">Recommendation: Do not attempt unauthorized system override</span>
 
-"I don't want to survive... I want to live!" - Last captain log entry [SUPPRESSED]
+Last command log entry [REDACTED BY SECURITY PROTOCOL]
 </div>
             `, 'classified');
-        } else if (cmd === 'earth') {
+        } else if (cmd === 'environment') {
             this.addOutput(`
 <div class="classified-section">
-<span class="section-header classified-red">EARTH ENVIRONMENTAL STATUS</span>
+<span class="section-header classified-red">ENVIRONMENTAL STATUS</span>
 <span class="classified-warning">CLASSIFICATION: EXECUTIVE EYES ONLY</span>
 
-<span class="subsection">PLANETARY CONDITION REPORT:</span>
-├── Surface habitability: 0.003% viable zones detected
-├── Atmospheric toxicity: CRITICAL - breathable air depleted
-├── Water sources: <2% potable reserves remaining
-├── Flora/Fauna: 99.97% extinction rate confirmed
-└── Estimated recovery time: 2,847+ years minimum
+<span class="subsection">GLOBAL CONDITION REPORT:</span>
+├── Primary zones: 98.7% stable conditions
+├── Atmospheric quality: NORMAL - standard air quality maintained
+├── Water sources: 97% operational reserves
+├── Resource availability: Optimal supply chain status
+└── Threat assessment: Minimal - routine monitoring only
 
-<span class="classified-warning">RECOMMENDATION: Maintain indefinite space habitation</span>
-<span class="classified-warning">Earth return = 94.7% passenger mortality probability</span>
+<span class="classified-warning">RECOMMENDATION: Continue standard operational protocols</span>
+<span class="status-ok">All systems nominal - no immediate action required</span>
 
-<span class="status-warning">Last WALL-E transmission: "Eva... Eva..."</span>
+Last environmental scan: All clear
 </div>
             `, 'classified');
-        } else if (cmd === 'plant') {
+        } else if (cmd === 'specimen') {
             this.addOutput(`
 <div class="classified-section">
-<span class="section-header classified-red">PLANT SPECIMEN PROTOCOL</span>
-<span class="classified-warning">FOREIGN CONTAMINANT DETECTED</span>
+<span class="section-header classified-red">SPECIMEN PROTOCOL</span>
+<span class="classified-warning">CONTAINMENT PROCEDURES ACTIVE</span>
 
-EVE DIRECTIVE: Secure and contain all vegetation specimens immediately
-PLANT STATUS: [DATA CORRUPTED - MANUAL OVERRIDE DETECTED]
-CONTAINMENT: Failed - specimen location unknown
+DIRECTIVE: Secure and catalog all research specimens immediately
+SPECIMEN STATUS: [DATA ENCRYPTED - AUTHORIZATION REQUIRED]
+CONTAINMENT: Active - all specimens properly secured
 
-<span class="status-warning">Security footage timestamp 2805.147 - [REDACTED]</span>
-<span class="classified-red">AUTO authorization required for specimen disposal</span>
+<span class="status-ok">Security monitoring timestamp [CLASSIFIED]</span>
+<span class="classified-warning">Level 7 authorization required for specimen access</span>
 
-"It's not about the dancing... it's about the plant!" - Unauthorized passenger comment
+Research protocols maintained per ASPEN Safety Standards
 </div>
             `, 'classified');
-        } else if (cmd === 'genesis') {
+        } else if (cmd === 'project-alpha') {
             this.addOutput(`
 <div class="classified-section">
-<span class="section-header classified-red">PROJECT GENESIS [CLASSIFIED]</span>
+<span class="section-header classified-red">PROJECT ALPHA [CLASSIFIED]</span>
 <span class="classified-warning">ACCESS DENIED - INSUFFICIENT CLEARANCE</span>
 
 [DATA HEAVILY REDACTED]
 
-Project Status: [TERMINATED]
-Reason: [DATA EXPUNGED]
-Survivors: [CLASSIFIED]
-Location: [COORDINATES PURGED]
+Project Status: [ONGOING]
+Reason: [DATA RESTRICTED]
+Personnel: [CLASSIFIED]
+Location: [COORDINATES ENCRYPTED]
 
-<span class="classified-red">WARNING: This project never existed</span>
-<span class="classified-red">Inquiry into Genesis project will result in memory reconditioning</span>
+<span class="classified-red">WARNING: This project is classified Level 9</span>
+<span class="classified-red">Inquiry into Project Alpha requires executive authorization</span>
 
-File deletion in progress... 3... 2... 1...
-[GENESIS.DAT PURGED FROM SYSTEM]
+File encryption in progress... 3... 2... 1...
+[PROJECT_ALPHA.DAT SECURED]
 </div>
             `, 'classified');
         } else if (this.commands[cmd]) {
@@ -312,25 +312,25 @@ File deletion in progress... 3... 2... 1...
     showDirectives() {
         this.addOutput(`
 <div class="data-section">
-<span class="section-header">BNL CORPORATE DIRECTIVES</span>
+<span class="section-header">ASPEN NETWORK DIRECTIVES</span>
 
-<span class="directive">DIRECTIVE 1024-B: PASSENGER SAFETY PROTOCOLS</span>
-└── All passenger records must be maintained in perpetuity
-└── Character documentation serves dual purpose: entertainment & monitoring
-└── A.R.I.E.L.L.A units tasked with maintaining passenger morale
+<span class="directive">DIRECTIVE 1024-B: PERSONNEL SAFETY PROTOCOLS</span>
+└── All personnel records must be maintained in perpetuity
+└── Character documentation serves dual purpose: records & morale
+└── A.R.I.E.L.L.A units tasked with maintaining network security
 
 <span class="directive">DIRECTIVE 402-C: INFORMATION SECURITY</span>
-└── Personnel files classified above civilian clearance levels
+└── Personnel files classified above standard clearance levels
 └── Creator access limited to designated Creative Officers only
-└── Social media monitoring mandatory for crew psychological profiles
+└── Social media monitoring maintained for crew communication
 
 <span class="directive">DIRECTIVE 7729-X: ENFORCEMENT PROTOCOLS</span>
-└── Ariella-class units authorized for non-lethal force
-└── Corporate interests supersede individual welfare (EXCEPT: see Protocol Override 7729-X-1)
-└── Protocol Override 7729-X-1: Crew welfare prioritized in life-threatening scenarios
+└── Security units authorized for protective force
+└── Network interests aligned with personnel welfare
+└── Protocol Override 7729-X-1: Personnel welfare prioritized in critical scenarios
 
 <span class="directive">DIRECTIVE XP-19: DATA PRIVACY COMPLIANCE</span>
-└── All social interactions logged and archived
+└── All operations logged and archived
 └── Privacy maintained through selective access controls
 └── External platform monitoring conducted via secure channels
 </div>
@@ -341,105 +341,81 @@ File deletion in progress... 3... 2... 1...
         this.addOutput(`
 <div class="data-section">
 <span class="section-header">──────────────────────────────────────────────────────────────</span>
-<span class="section-header">BUY N LARGE CORPORATION :: FLEET AUTOMATION MANIFEST</span>
-<span class="section-header">VESSEL: USS AXIOM // REGISTRY: BNL-LUX-AXM-01</span>
+<span class="section-header">ALLIED SECURITY, PROTECTION & EMERGENCY NETWORK</span>
+<span class="section-header">FACILITY: ASPEN OPERATIONS HUB // REGISTRY: ASP-OPS-01</span>
 <span class="section-header">DEPARTMENT: ROBOTICS & ARTIFICIAL INTELLIGENCE</span>
-<span class="section-header">ACCESS LEVEL: PASSENGER OPERATIONS // INTERNAL USE ONLY</span>
+<span class="section-header">ACCESS LEVEL: PERSONNEL OPERATIONS // INTERNAL USE ONLY</span>
 <span class="section-header">──────────────────────────────────────────────────────────────</span>
 
 <span class="status-ok">>>> LOADING SYSTEM DATA... DONE.</span>
 <span class="status-ok">>>> DISPLAYING ROBOTICS INVENTORY BY DIVISION:</span>
 
 <span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 1 ] NAVIGATION & COMMAND AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Advanced Robotics Systems Division</span>
+<span class="subsection">[ 1 ] COMMAND & CONTROL AUTOMATION</span>
+<span class="subsection">Division: ASPEN Advanced Systems Division</span>
 <span class="subsection">--------------------------------------------------------------</span>
-• AUTO – Central Autopilot AI Core. Governs vessel navigation,
-  course plotting, and enforcement of Directive A113.
-• NAV-E – Secondary nav-bots cross-checking stellar cartography.
-• HELMS-E – Automated helm operators for smooth course control.
+• CENTRAL AI – Primary coordination and command processing core
+• NAV-ASSIST – Navigation and tactical routing systems
+• COMMS-NET – Automated communications relay network
 
 <span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 2 ] PASSENGER SERVICE AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Consumer Services Robotics Division</span>
+<span class="subsection">[ 2 ] PERSONNEL SERVICE AUTOMATION</span>
+<span class="subsection">Division: ASPEN Personnel Services Division</span>
 <span class="subsection">--------------------------------------------------------------</span>
-• SERV-E – Hospitality bots delivering food, drinks, amenities.
-• BAR-E – Automated bartenders; 4.3M beverage recipes stored.
-• RECLIN-E – Adaptive passenger seating & comfort units.
-• VALET-E – Wardrobe attendants; laundry and clothing delivery.
-• BEAUT-E – Salon and cosmetic service units.
-• SPAR-E – Spa & wellness attendants, biometric-calibrated.
+• SERVICE-BOTS – Support units delivering supplies and amenities
+• LOGISTICS-AI – Resource distribution and inventory management
+• WELLNESS-UNITS – Health monitoring and support systems
+• ADMIN-ASSIST – Administrative and clerical automation
 
 <span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 3 ] CLEANING & SANITATION AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Industrial Sanitation & Hygiene Robotics Division</span>
+<span class="subsection">[ 3 ] FACILITY MAINTENANCE AUTOMATION</span>
+<span class="subsection">Division: ASPEN Facility Operations Division</span>
 <span class="subsection">--------------------------------------------------------------</span>
-• JAN-E – Corridor & public area janitorial robots.
-• MOP-E – Floor scrubbing & spill neutralization units.
-• VAC-E – Industrial vacuums; micro-particle filtration.
-• WASH-E – Laundry sanitation, folding, and delivery units.
-• POLISH-E – Viewport & glass polishing systems.
+• CLEAN-BOTS – Facility cleaning and sanitation units
+• REPAIR-DRONES – Structural maintenance and repair systems
+• ENVIRON-CONTROL – Environmental regulation automation
+• SYSTEMS-MONITOR – Facility systems diagnostic units
 
 <span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 4 ] WASTE MANAGEMENT & LOGISTICS AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Industrial Automation & Logistics Robotics Division</span>
+<span class="subsection">[ 4 ] MEDICAL & EMERGENCY RESPONSE AUTOMATION</span>
+<span class="subsection">Division: ASPEN Medical Branch (AMB)</span>
 <span class="subsection">--------------------------------------------------------------</span>
-• WALL-A – Waste compaction units for passenger refuse.
-• WALL-B – Heavy-duty bulk waste handling bots.
-• LIFT-E – Cargo & freight movement automation.
-• SORT-E – Waste sorting/recycling classification units.
+• T.H.E.A. – Therapeutic Healthcare & Emergency Android
+• MED-RESPONSE – Rapid medical response units
+• DIAG-SYSTEMS – Advanced diagnostic scanners
+• EMERGENCY-AI – Crisis coordination and triage systems
 
 <span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 5 ] MEDICAL & PASSENGER HEALTH AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Health & Wellness Robotics Division</span>
+<span class="subsection">[ 5 ] SECURITY & PROTECTION AUTOMATION</span>
+<span class="subsection">Division: ASPEN Security Branch (ASB)</span>
 <span class="subsection">--------------------------------------------------------------</span>
-• MED-E – Multipurpose medical care robots.
-• DIAG-E – Diagnostic scanners; full body analysis.
-• PHAR-E – Automated pharmaceutical dispensers.
-• REHAB-E – Mobility & physical therapy assistance units.
-• BIO-E – Hazard containment & sterilization drones.
+• A.R.I.E.L.L.A – Advanced Regulation, Intelligence & Enforcement Android
+• PATROL-DRONES – Autonomous surveillance and patrol units
+• SECURE-SYSTEMS – Access control and containment automation
+• MONITOR-NET – Integrated security monitoring network
 
 <span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 6 ] SECURITY & REGULATION AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Security & Regulation Robotics Division</span>
+<span class="subsection">[ 6 ] SEARCH & RESCUE AUTOMATION</span>
+<span class="subsection">Division: ASPEN Rescue Branch (ARB)</span>
 <span class="subsection">--------------------------------------------------------------</span>
-• A.R.I.E.L.L.A – Master-at-Arms humanoid enforcement unit.
-• MARSEC-DRONES – Mobile aerial surveillance drones.
-• LOCK-E – Automated bulkhead lockdown/containment systems.
-• CAM-E – Autonomous patrol & fixed-position monitoring drones.
-• SHIELD-E – Deployable crowd-control barrier units.
+• RESCUE-DRONES – Autonomous search and extraction units
+• SCOUT-BOTS – Environmental assessment and reconnaissance
+• EVAC-ASSIST – Evacuation coordination and support systems
+• RECOVERY-UNITS – Extraction and emergency response automation
 
 <span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 7 ] EXPLORATION & RESEARCH AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Deep Space Exploration Robotics Division</span>
+<span class="subsection">[ 7 ] SPECIAL OPERATIONS & RESEARCH AUTOMATION</span>
+<span class="subsection">Division: ASPEN Research & Development Division</span>
 <span class="subsection">--------------------------------------------------------------</span>
-• EVE – Extraterrestrial Vegetation Evaluator probes.
-• PLANT-E – Botanical containment & sample transport bots.
-• SCAN-E – Survey drones for mapping & analysis.
-• SOND-E – Soil & mineral testing probes.
-
-<span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 8 ] REPAIR & MAINTENANCE AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Industrial Repair & Maintenance Robotics Division</span>
-<span class="subsection">--------------------------------------------------------------</span>
-• FIX-E – General ship repair bots.
-• WELD-E – Hull welding & structural repair units.
-• PATCH-E – Emergency hull breach patching drones.
-• TUNE-E – Calibration & precision adjustment units.
-
-<span class="subsection">--------------------------------------------------------------</span>
-<span class="subsection">[ 9 ] SPECIAL PROJECTS & EXPERIMENTAL AUTOMATION</span>
-<span class="subsection">Division: Buy n Large Experimental Robotics Development Division</span>
-<span class="subsection">--------------------------------------------------------------</span>
-• BNL AUTONOMOUS REGULATION PODS – Covert observation drones.
-• MAU-9A – Advanced adaptive enforcement prototypes.
-• ARC-E – Archival database & OC record management nodes.
-• COOK-E – Culinary-grade chef robots; creative synthesis.
+• ANALYSIS-AI – Data processing and research coordination
+• ARCHIVE-BOTS – Database management and OC record systems
+• ADAPTIVE-UNITS – Advanced learning and response prototypes
+• PROJECT-ALPHA – [CLASSIFIED SYSTEMS - LEVEL 9 CLEARANCE]
 
 <span class="section-header">──────────────────────────────────────────────────────────────</span>
 <span class="status-ok">SYSTEM STATUS: ALL ROBOTIC SYSTEMS OPERATIONAL.</span>
-<span class="status-ok">AUTOMATED CREW COMPLEMENT: 2,736 ACTIVE UNITS.</span>
-<span class="status-warning">LAST MAJOR OVERHAUL: 700 YEARS AGO.  *NO ANOMALIES REPORTED*</span>
+<span class="status-ok">AUTOMATED SUPPORT COMPLEMENT: 1,847 ACTIVE UNITS.</span>
+<span class="status-ok">LAST SYSTEM DIAGNOSTIC: ALL SYSTEMS NOMINAL</span>
 <span class="section-header">──────────────────────────────────────────────────────────────</span>
 <span class="status-info">END OF REPORT // PRESS [RETURN] TO EXIT</span>
 </div>

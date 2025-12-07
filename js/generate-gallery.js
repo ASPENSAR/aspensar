@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ocFolders = ['thea']; // OC directories
+const ocFolders = ['thea', 'layla']; // OC directories
 
 ocFolders.forEach(oc => {
     const basePath = path.join(__dirname, '..', oc, 'images'); // FIXED: go up one folder
