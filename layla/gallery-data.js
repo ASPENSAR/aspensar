@@ -1,6 +1,6 @@
 /**
  * Auto-generated gallery data for layla.
- * Generated: 2025-12-08T02:13:53.657Z
+ * Generated: 2025-12-08T03:27:27.560Z
  */
 const galleryData = {
     refs: [],
