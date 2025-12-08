@@ -12,10 +12,10 @@
 /* Queue Controls */
 .queue-controls {
     margin-bottom: 30px;
-    background: rgba(0, 15, 30, 0.9);
+    background: rgba(11, 31, 51, 0.9);
     padding: 25px;
     border-radius: 10px;
-    border: 1px solid #00bcd4;
+    border: 1px solid #1EA6A8;
 }
 
 .controls-header {
@@ -24,13 +24,13 @@
 }
 
 .controls-header h2 {
-    color: #00bcd4;
+    color: #1EA6A8;
     font-family: 'Orbitron', monospace;
     margin-bottom: 10px;
 }
 
 .queue-subtitle {
-    color: #b0bec5;
+    color: #CFD8DC;
     font-style: italic;
     margin: 0;
 }
@@ -48,7 +48,7 @@
 }
 
 .control-group label {
-    color: #00bcd4;
+    color: #1EA6A8;
     font-weight: 500;
     margin-bottom: 8px;
     font-family: 'Orbitron', monospace;
@@ -57,11 +57,11 @@
 
 .control-group input,
 .control-group select {
-    background: rgba(0, 30, 60, 0.8);
+    background: rgba(14, 41, 64, 0.8);
     border: 1px solid #263238;
     border-radius: 5px;
     padding: 12px;
-    color: #e0e0e0;
+    color: #F5F7FB;
     font-size: 14px;
     transition: all 0.3s;
 }
@@ -69,8 +69,8 @@
 .control-group input:focus,
 .control-group select:focus {
     outline: none;
-    border-color: #00bcd4;
-    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+    border-color: #1EA6A8;
+    box-shadow: 0 0 10px rgba(30, 166, 168, 0.3);
 }
 
 /* Queue Display */
@@ -83,19 +83,19 @@
 }
 
 .section-title {
-    color: #00bcd4;
+    color: #1EA6A8;
     font-family: 'Orbitron', monospace;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(0, 188, 212, 0.3);
+    border-bottom: 2px solid rgba(30, 166, 168, 0.3);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .count {
-    background: rgba(0, 188, 212, 0.2);
-    color: #00bcd4;
+    background: rgba(30, 166, 168, 0.2);
+    color: #1EA6A8;
     padding: 2px 8px;
     border-radius: 10px;
     font-size: 0.8em;
