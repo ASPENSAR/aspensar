@@ -1,0 +1,144 @@
+/* Tactical Modern Military Interface Theme */
+/* Modern military HUD with sharp edges and tactical design */
+
+:root[data-theme="tactical"] {
+    /* Tactical Theme Colors */
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #1c2128;
+    --bg-card: #21262d;
+    --bg-button: rgba(33, 38, 45, 0.8);
+    --bg-button-hover: rgba(30, 166, 168, 0.2);
+    --bg-button-active: rgba(30, 166, 168, 0.3);
+    
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --text-accent: #1EA6A8;
+    --text-footer: #8b949e;
+    
+    --accent-primary: #1EA6A8;
+    --accent-secondary: #17898B;
+    --accent-cyan: #1EA6A8;
+    --accent-orange: #FF7043;
+    --accent-blue: rgba(30, 166, 168, 0.3);
+    --accent-blue-hover: rgba(30, 166, 168, 0.5);
+    
+    --border-primary: rgba(30, 166, 168, 0.25);
+    --border-secondary: rgba(30, 166, 168, 0.35);
+    --border-accent: rgba(30, 166, 168, 0.6);
+    
+    --shadow-primary: rgba(30, 166, 168, 0.4);
+    --shadow-secondary: rgba(30, 166, 168, 0.8);
+    
+    --gradient-header: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    
+    --comment-bg: rgba(13, 17, 23, 0.95);
+    --comment-form-bg: rgba(22, 27, 34, 0.7);
+    --comment-card-bg: rgba(13, 17, 23, 0.8);
+    --comment-card-hover-bg: rgba(22, 27, 34, 0.9);
+    --comment-input-bg: rgba(0, 0, 0, 0.6);
+    --comment-own-bg: rgba(28, 33, 40, 0.8);
+    --comment-own-hover-bg: rgba(33, 38, 45, 0.9);
+    --ranking-card-bg: rgba(13, 17, 23, 0.95);
+    --ranking-card-hover-bg: rgba(22, 27, 34, 1);
+}
+
+body[data-theme="tactical"] {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+body[data-theme="tactical"] .site-header h1,
+body[data-theme="tactical"] h1,
+body[data-theme="tactical"] h2,
+body[data-theme="tactical"] h3 {
+    font-family: 'Rajdhani', 'Orbitron', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Sharp tactical edges - minimal rounding */
+body[data-theme="tactical"] .character-card,
+body[data-theme="tactical"] .nav-btn,
+body[data-theme="tactical"] button,
+body[data-theme="tactical"] input,
+body[data-theme="tactical"] select,
+body[data-theme="tactical"] .terminal-container {
+    border-radius: 2px !important;
+}
+
+/* Angular tactical borders */
+body[data-theme="tactical"] .character-card {
+    border: 1px solid var(--border-accent);
+    border-left: 3px solid var(--accent-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+body[data-theme="tactical"] .character-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-primary) 0%, transparent 100%);
+}
+
+/* Tactical corner brackets */
+body[data-theme="tactical"] .status-panel::before,
+body[data-theme="tactical"] .status-panel::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--accent-primary);
+}
+
+body[data-theme="tactical"] .status-panel::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+body[data-theme="tactical"] .status-panel::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+body[data-theme="tactical"] .status-panel {
+    position: relative;
+    background: rgba(22, 27, 34, 0.9);
+    border: 1px solid var(--border-secondary);
+}
+
+/* Military-style headers */
+body[data-theme="tactical"] .section-title {
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 15px;
+    background: linear-gradient(90deg, rgba(30, 166, 168, 0.1) 0%, transparent 100%);
+}
+
+/* Grid overlay effect */
+body[data-theme="tactical"]::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(30, 166, 168, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 166, 168, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+body[data-theme="tactical"] > * {
+    position: relative;
+    z-index: 2;
+}

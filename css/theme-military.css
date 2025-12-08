@@ -1,0 +1,131 @@
+/* Military CRT Terminal Theme */
+/* Classic green phosphor CRT terminal aesthetic */
+
+:root[data-theme="military"] {
+    /* Military CRT Theme Colors */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #0d0d0d;
+    --bg-tertiary: #111111;
+    --bg-card: #0f0f0f;
+    --bg-button: rgba(15, 20, 10, 0.8);
+    --bg-button-hover: rgba(0, 255, 0, 0.15);
+    --bg-button-active: rgba(0, 255, 0, 0.25);
+    
+    --text-primary: #00ff00;
+    --text-secondary: #00cc00;
+    --text-accent: #00ff41;
+    --text-footer: #00aa00;
+    
+    --accent-primary: #00ff00;
+    --accent-secondary: #00ff41;
+    --accent-cyan: #00ff00;
+    --accent-orange: #ffaa00;
+    --accent-blue: rgba(0, 255, 0, 0.3);
+    --accent-blue-hover: rgba(0, 255, 0, 0.5);
+    
+    --border-primary: rgba(0, 255, 0, 0.3);
+    --border-secondary: rgba(0, 255, 0, 0.4);
+    --border-accent: rgba(0, 255, 0, 0.6);
+    
+    --shadow-primary: rgba(0, 255, 0, 0.4);
+    --shadow-secondary: rgba(0, 255, 65, 0.7);
+    
+    --gradient-header: linear-gradient(to right, #0a0a0a, #0d0d0d);
+    
+    --comment-bg: rgba(0, 10, 0, 0.95);
+    --comment-form-bg: rgba(0, 15, 0, 0.7);
+    --comment-card-bg: rgba(0, 10, 0, 0.8);
+    --comment-card-hover-bg: rgba(0, 15, 0, 0.9);
+    --comment-input-bg: rgba(0, 0, 0, 0.8);
+    --comment-own-bg: rgba(10, 15, 0, 0.8);
+    --comment-own-hover-bg: rgba(15, 20, 0, 0.9);
+    --ranking-card-bg: rgba(0, 10, 0, 0.95);
+    --ranking-card-hover-bg: rgba(0, 15, 0, 1);
+}
+
+/* CRT Screen Effects */
+body[data-theme="military"]::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03) 0px,
+        rgba(0, 0, 0, 0.05) 1px,
+        rgba(0, 255, 0, 0.03) 2px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+body[data-theme="military"] {
+    text-shadow: 0 0 3px rgba(0, 255, 0, 0.5);
+    font-family: 'Courier New', 'Consolas', monospace;
+}
+
+body[data-theme="military"] .site-header h1,
+body[data-theme="military"] h1,
+body[data-theme="military"] h2,
+body[data-theme="military"] h3 {
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Flicker effect */
+body[data-theme="military"]::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 0, 0.02);
+    pointer-events: none;
+    z-index: 9998;
+    animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.97; }
+    50% { opacity: 1; }
+    100% { opacity: 0.98; }
+}
+
+/* Remove rounded corners */
+body[data-theme="military"] .character-card,
+body[data-theme="military"] .nav-btn,
+body[data-theme="military"] button,
+body[data-theme="military"] input,
+body[data-theme="military"] select,
+body[data-theme="military"] .terminal-container {
+    border-radius: 0 !important;
+}
+
+/* Sharp military borders */
+body[data-theme="military"] .character-card,
+body[data-theme="military"] .status-panel,
+body[data-theme="military"] .weather-card {
+    border: 2px solid var(--accent-primary);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/* Amber warning accents */
+body[data-theme="military"] .status-fill.warning {
+    background: #ffaa00 !important;
+}
+
+body[data-theme="military"] .classified-red {
+    color: #ff0000 !important;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+}

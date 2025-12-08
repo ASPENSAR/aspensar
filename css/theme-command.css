@@ -1,0 +1,191 @@
+/* Command Center Futuristic Theme */
+/* Blend of CRT aesthetic with modern ASPEN colors for futuristic command center */
+
+:root[data-theme="command"] {
+    /* Command Center Theme Colors - ASPEN with enhancements */
+    --bg-primary: #050d15;
+    --bg-secondary: #0a1520;
+    --bg-tertiary: #0f1d2a;
+    --bg-card: #112433;
+    --bg-button: rgba(17, 36, 51, 0.8);
+    --bg-button-hover: rgba(30, 166, 168, 0.25);
+    --bg-button-active: rgba(30, 166, 168, 0.35);
+    
+    --text-primary: #e0f2f3;
+    --text-secondary: #9ec5c8;
+    --text-accent: #00ffcc;
+    --text-footer: #7ab5b8;
+    
+    --accent-primary: #00ffcc;
+    --accent-secondary: #1EA6A8;
+    --accent-cyan: #00ffcc;
+    --accent-orange: #ff6b35;
+    --accent-blue: rgba(0, 255, 204, 0.3);
+    --accent-blue-hover: rgba(0, 255, 204, 0.5);
+    
+    --border-primary: rgba(0, 255, 204, 0.25);
+    --border-secondary: rgba(30, 166, 168, 0.35);
+    --border-accent: rgba(0, 255, 204, 0.6);
+    
+    --shadow-primary: rgba(0, 255, 204, 0.4);
+    --shadow-secondary: rgba(0, 255, 204, 0.8);
+    
+    --gradient-header: linear-gradient(135deg, #050d15 0%, #0a1520 50%, #0f1d2a 100%);
+    
+    --comment-bg: rgba(5, 13, 21, 0.95);
+    --comment-form-bg: rgba(10, 21, 32, 0.7);
+    --comment-card-bg: rgba(5, 13, 21, 0.8);
+    --comment-card-hover-bg: rgba(10, 21, 32, 0.9);
+    --comment-input-bg: rgba(0, 0, 0, 0.7);
+    --comment-own-bg: rgba(15, 29, 42, 0.8);
+    --comment-own-hover-bg: rgba(20, 34, 47, 0.9);
+    --ranking-card-bg: rgba(5, 13, 21, 0.95);
+    --ranking-card-hover-bg: rgba(10, 21, 32, 1);
+}
+
+body[data-theme="command"] {
+    font-family: 'Roboto Mono', 'Consolas', monospace;
+}
+
+body[data-theme="command"] .site-header h1,
+body[data-theme="command"] h1,
+body[data-theme="command"] h2,
+body[data-theme="command"] h3 {
+    font-family: 'Orbitron', 'Rajdhani', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+}
+
+/* Holographic glow effect */
+body[data-theme="command"] .site-header h1,
+body[data-theme="command"] h2.section-title {
+    text-shadow: 
+        0 0 10px rgba(0, 255, 204, 0.8),
+        0 0 20px rgba(0, 255, 204, 0.6),
+        0 0 30px rgba(0, 255, 204, 0.4);
+}
+
+/* Subtle scanline effect */
+body[data-theme="command"]::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 204, 0.02) 0px,
+        rgba(0, 0, 0, 0.03) 1px,
+        rgba(0, 255, 204, 0.02) 2px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    animation: commandScan 12s linear infinite;
+}
+
+@keyframes commandScan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+/* Modern rounded corners with glow */
+body[data-theme="command"] .character-card,
+body[data-theme="command"] .nav-btn,
+body[data-theme="command"] button,
+body[data-theme="command"] .terminal-container {
+    border-radius: 8px !important;
+    border: 1px solid var(--border-accent);
+}
+
+body[data-theme="command"] .character-card {
+    box-shadow: 
+        0 0 15px rgba(0, 255, 204, 0.2),
+        0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+body[data-theme="command"] .character-card:hover {
+    box-shadow: 
+        0 0 25px rgba(0, 255, 204, 0.4),
+        0 8px 30px rgba(0, 0, 0, 0.8);
+    border-color: var(--accent-primary);
+}
+
+/* Futuristic corner accents */
+body[data-theme="command"] .status-panel::before,
+body[data-theme="command"] .status-panel::after,
+body[data-theme="command"] .weather-card::before,
+body[data-theme="command"] .weather-card::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--accent-primary);
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
+}
+
+body[data-theme="command"] .status-panel::before,
+body[data-theme="command"] .weather-card::before {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+}
+
+body[data-theme="command"] .status-panel::after,
+body[data-theme="command"] .weather-card::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 8px;
+}
+
+body[data-theme="command"] .status-panel,
+body[data-theme="command"] .weather-card {
+    position: relative;
+    background: rgba(15, 29, 42, 0.8);
+    border: 1px solid var(--border-secondary);
+}
+
+/* Animated status bars */
+body[data-theme="command"] .status-fill {
+    background: linear-gradient(90deg, 
+        var(--accent-primary) 0%, 
+        var(--accent-secondary) 100%);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Holographic data readout effect */
+body[data-theme="command"] .terminal-output {
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.3);
+}
+
+/* Command center grid overlay */
+body[data-theme="command"]::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 204, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 204, 0.015) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+body[data-theme="command"] > * {
+    position: relative;
+    z-index: 2;
+}

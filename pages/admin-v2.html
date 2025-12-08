@@ -7,7 +7,11 @@
     <title>ASPEN Operations Hub // Command Console</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/commission-admin-v2.css">
+    <link rel="stylesheet" href="../css/theme-military.css">
+    <link rel="stylesheet" href="../css/theme-tactical.css">
+    <link rel="stylesheet" href="../css/theme-command.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -104,6 +108,29 @@
 </section>
 
 <main class="admin-container">
+    
+    <!-- Theme Selector -->
+    <section class="theme-selector-section" style="background: var(--bg-card); border: 2px solid var(--border-accent); padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px;">
+        <h2 style="margin-top: 0; color: var(--accent-primary);">🎨 INTERFACE THEME TESTING</h2>
+        <p style="margin-bottom: 1rem; color: var(--text-secondary);">Select a paramilitary terminal theme to test different UI aesthetics:</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button id="theme-default" class="theme-btn" style="padding: 0.75rem 1.5rem; background: var(--bg-button); color: var(--text-primary); border: 2px solid var(--border-primary); cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                ⚡ DEFAULT (ASPEN Standard)
+            </button>
+            <button id="theme-military" class="theme-btn" style="padding: 0.75rem 1.5rem; background: var(--bg-button); color: var(--text-primary); border: 2px solid var(--border-primary); cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                🟢 MILITARY (CRT Green Terminal)
+            </button>
+            <button id="theme-tactical" class="theme-btn" style="padding: 0.75rem 1.5rem; background: var(--bg-button); color: var(--text-primary); border: 2px solid var(--border-primary); cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                ⚔️ TACTICAL (Modern Military HUD)
+            </button>
+            <button id="theme-command" class="theme-btn" style="padding: 0.75rem 1.5rem; background: var(--bg-button); color: var(--text-primary); border: 2px solid var(--border-primary); cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                🌟 COMMAND (Futuristic Center)
+            </button>
+        </div>
+        <p style="margin-top: 1rem; margin-bottom: 0; color: var(--text-footer); font-size: 0.9rem;">
+            <strong>NOTE:</strong> Theme selection persists across pages and is saved to browser storage.
+        </p>
+    </section>
     
     <!-- Commission Statistics Dashboard -->
     <section class="stats-section">
