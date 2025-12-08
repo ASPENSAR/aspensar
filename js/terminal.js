@@ -1,4 +1,4 @@
-class BNLTerminal {
+class ASPENTerminal {
     constructor() {
         this.output = document.getElementById('terminalOutput');
         this.input = document.getElementById('terminalInput');
@@ -908,5 +908,5 @@ PASSENGER NOTIFICATION: NOT AUTHORIZED
 let terminal;
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Initializing terminal...'); // Debug log
-    terminal = new BNLTerminal();
+    terminal = new ASPENTerminal();
 });

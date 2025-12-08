@@ -430,14 +430,14 @@ class PrideMonthSpecial {
         if (headerTitle) {
             headerTitle.setAttribute('data-original', headerTitle.textContent);
             headerTitle.classList.add('pride-text');
-            headerTitle.innerHTML = headerTitle.innerHTML.replace('USS AXIOM', '🏳️‍🌈 USS AXIOM PRIDE');
+            headerTitle.innerHTML = headerTitle.innerHTML.replace('ASPEN OPERATIONS HUB', '🏳️‍🌈 ASPEN PRIDE');
         }
         
         // Update terminal intro
         const terminalIntro = document.querySelector('.terminal-intro p strong');
         if (terminalIntro) {
             terminalIntro.setAttribute('data-original', terminalIntro.textContent);
-            terminalIntro.innerHTML = '🌈 BNL PRIDE MONTH NOTICE:';
+            terminalIntro.innerHTML = '🌈 ASPEN PRIDE MONTH NOTICE:';
         }
     }
 
