@@ -70,7 +70,7 @@ body::before {
         rgba(0, 255, 204, 0.02) 2px
     );
     pointer-events: none;
-    z-index: 9999;
+    z-index: -1;
     animation: commandScan 12s linear infinite;
 }
 
@@ -92,12 +92,7 @@ body::after {
         linear-gradient(90deg, rgba(0, 255, 204, 0.015) 1px, transparent 1px);
     background-size: 30px 30px;
     pointer-events: none;
-    z-index: 1;
-}
-
-body > * {
-    position: relative;
-    z-index: 2;
+    z-index: -2;
 }
 
 /* Header */
